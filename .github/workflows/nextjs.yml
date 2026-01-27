@@ -15,61 +15,31 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
       # Чекаут кода
-      - name: Checkout
+      - name: Checkout branch
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # Установка pnpm и установка зависимостей сразу (генерация lockfile)
+      # Установка pnpm и зависимостей сразу
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: true
 
-      # Установка Node.js и кэширование pnpm
+      # Установка зависимостей с frozen lockfile
+      - name: Install dependencies (ensure lockfile)
+        run: pnpm install --frozen-lockfile
+
+      # Установка Node.js и кеширование pnpm
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.14.0
           cache: "pnpm"
 
-      # Настройка GitHub Pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      # Кэш Next.js
-      - name: Restore Next.js cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
-
-      # Установка зависимостей через pnpm (для стабильности)
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      # Сборка проекта
-      - name: Build with Next.js
-        run: pnpm next build
-
-      # Загрузка артефакта для GitHub Pages
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # (Добавь тут свои шаги для сборки и деплоя, если нужны)
