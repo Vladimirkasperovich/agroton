@@ -1,22 +1,16 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the main branch
   push:
     branches:
       - main
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -25,36 +19,44 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Checkout кода
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js
+      # 2️⃣ Установка Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "pnpm"
 
+      # 3️⃣ Установка pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.3
+
+      # 4️⃣ Установка зависимостей с frozen lockfile
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
+      # 5️⃣ Настройка GitHub Pages
       - name: Setup Pages
-        id: setup_pages
         uses: actions/configure-pages@v5
 
-      - name: Restore cache
+      # 6️⃣ Кэш Next.js (для ускорения билда)
+      - name: Restore Next.js cache
         uses: actions/cache@v4
         with:
-          path: |
-            apps/portfolio/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      # 7️⃣ Сборка Next.js проекта
       - name: Build with Next.js
         run: npx nx build portfolio
 
+      # 8️⃣ Загрузка артефакта для Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
