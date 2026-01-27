@@ -18,7 +18,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Чекаут кода
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -29,15 +28,15 @@ jobs:
           node-version: "20"
           cache: "pnpm"
 
-      # Установка pnpm
-      - name: Install pnpm
-        run: npm install -g pnpm
+      # Установка pnpm через официальный action
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8  # укажи нужную версию pnpm, например 8 или latest
 
-      # Настройка GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Восстановление кэша Next.js
       - name: Restore Next.js cache
         uses: actions/cache@v4
         with:
@@ -45,15 +44,12 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      # Установка зависимостей через pnpm
       - name: Install dependencies
         run: pnpm install
 
-      # Сборка проекта
       - name: Build with Next.js
         run: pnpm next build
 
-      # Сборка артефакта для Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
