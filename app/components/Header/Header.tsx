@@ -28,7 +28,6 @@ export const Header = () => {
             Contact us
           </Link>
         </div>
-        <p></p>
       </div>
     </header>
   );
