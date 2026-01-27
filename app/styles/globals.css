@@ -1,0 +1,23 @@
+:root {
+  --font-work-sans: var(--font-work-sans);
+  --font-nunito-sans: var(--font-nunito-sans);
+  --font-inter: var(--font-inter);
+  --font-roboto: var(--font-roboto);
+  --background-primary: #fdfdf0;
+  --background-secondary: var(--color-black);
+  --color-black: #0e0d0d;
+  --color-white: var(--background-primary);
+}
+
+body {
+  font-family: var(--font-work-sans), system-ui, sans-serif;
+  background: var(--background-primary);
+  color: var(--color-black);
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
