@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Work_Sans, Nunito_Sans, Inter, Roboto } from 'next/font/google';
+import { Work_Sans, Nunito_Sans } from 'next/font/google';
 import './styles/globals.css';
 import './styles/reset.css';
 import { ReactNode } from 'react';
+import { Header } from '@/app/components/Header/Header';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -14,18 +15,6 @@ const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
   weight: ['200', '300', '400'],
   variable: '--font-nunito-sans',
-  display: 'swap',
-});
-const inter = Inter({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-inter',
-  display: 'swap',
-});
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-roboto',
   display: 'swap',
 });
 
@@ -40,11 +29,11 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${workSans.variable} ${nunitoSans.variable} ${inter.variable} ${roboto.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${workSans.variable} ${nunitoSans.variable}`}>
+      <body>
+      <Header />
+      {children}
+      </body>
     </html>
   );
 }

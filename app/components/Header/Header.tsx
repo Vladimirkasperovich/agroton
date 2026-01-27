@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '@/public/Logo.svg';
 import Link from 'next/link';
-import styles from './Header.module.css';
 import { NAV_ITEMS } from '@/app/components/Header/constants';
+import styles from './Header.module.css';
 
 export const Header = () => {
   return (

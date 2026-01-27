@@ -1,0 +1,29 @@
+.about {
+}
+
+.about__top {
+    text-align: center;
+    background: image-set(
+            url("/about-top-bg.avif") type("image/avif"),
+            url("/about-top-bg.jpg") type("image/jpeg")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.about__title {
+    font-size: 250px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: white;
+}
+
+.about__text {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: white;
+}
