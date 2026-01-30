@@ -1,0 +1,63 @@
+.achievements {
+    font-family: var(--font-nunito-sans), sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -55px;
+    margin-bottom: 90px;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: var(--background-gray);
+    padding: 14px 10px;
+    border-radius: 20px;
+}
+
+.achievementImageBox {
+    position: relative;
+}
+
+.achievementButton {
+    background: #f2a531;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    bottom: 75%;
+    left: 85%;
+}
+
+.achievementButton img {
+    width: 8px;
+    height: 8px;
+}
+
+.achievementContent {
+    font-family: var(--font-nunito-sans), sans-serif;
+}
+
+.achievementTitle {
+    line-height: 1.375;
+    margin-bottom: 20px;
+    font-weight: 200;
+    max-width: 321px;
+}
+
+.achievementText {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1;
+    max-width: 321px;
+}
+
+.textHighlight {
+    font-weight: 600;
+    color: #f2a531;
+}
+
+.textBold {
+    font-weight: 600;
+    margin-right: 3px;
+}

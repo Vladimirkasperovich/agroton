@@ -1,0 +1,49 @@
+.overview {
+}
+
+.title {
+    font-weight: 200;
+    font-size: 40px;
+    line-height: 1.375;
+    margin-bottom: 40px;
+    max-width: 1349px;
+}
+
+.title span {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image {
+}
+
+.info {
+    font-family: var(--font-nunito-sans), sans-serif;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 45px;
+    max-width: 889px;
+}
+
+.statsList {
+}
+
+.statsList:nth-last-child(1) {
+    border-bottom: 1px solid #0e0d0d3b;
+}
+
+.statsItem {
+    padding: 15px 0;
+    display: flex;
+    border-top: 1px solid #0e0d0d3b;
+}

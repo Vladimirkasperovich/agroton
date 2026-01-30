@@ -1,0 +1,32 @@
+.advantages {
+
+}
+
+.advantagesList {
+    background: var(--background-gray);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px 17px;
+    border-radius: 20px;
+    margin-bottom: 70px;
+}
+
+.advantagesItem {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.advantagesTitle {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.advantagesText {
+    font-size: 22px;
+    font-weight: 400;
+    max-width: 264px;
+    text-align: center;
+}

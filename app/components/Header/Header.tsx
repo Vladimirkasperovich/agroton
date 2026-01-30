@@ -9,22 +9,24 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
-        <div className={styles.header__inner}>
+        <div className={styles.headerInner}>
           <Link href="#" className={styles.logo}>
             <Image src={Logo} alt="Agro logo" />
           </Link>
+
           <nav className={styles.menu}>
-            <ul className={styles.menu__list}>
+            <ul className={styles.menuList}>
               {NAV_ITEMS.map(({ id, title, href }) => (
-                <li key={id} className={styles.menu__item}>
-                  <Link href={href} className={styles.menu__link}>
+                <li key={id} className={styles.menuItem}>
+                  <Link href={href} className={styles.menuLink}>
                     {title}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
-          <Link href="#" className={styles.header__contacts}>
+
+          <Link href="#" className={styles.headerContacts}>
             Contact us
           </Link>
         </div>
