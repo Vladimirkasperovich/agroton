@@ -54,7 +54,7 @@
 
 .textHighlight {
     font-weight: 600;
-    color: #f2a531;
+    color: var(--color-gold)
 }
 
 .textBold {

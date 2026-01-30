@@ -17,6 +17,7 @@
 
 .layout {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -30,7 +31,7 @@
 .description {
     font-size: 18px;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.39;
     margin-bottom: 45px;
     max-width: 889px;
 }
@@ -43,7 +44,32 @@
 }
 
 .statsItem {
-    padding: 15px 0;
+    padding: 13px 0;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-top: 1px solid #0e0d0d3b;
+
 }
+
+.statsLabel {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.yellowText {
+    color: var(--color-gold);
+    font-weight: 600;
+    font-size: 18px;
+}
+.boldText{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.statsValue {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+

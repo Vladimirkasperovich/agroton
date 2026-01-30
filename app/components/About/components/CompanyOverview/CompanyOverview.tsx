@@ -18,41 +18,58 @@ export const CompanyOverview = () => {
 
         <div className={styles.info}>
           <h4 className={styles.description}>
-            Agroton is 30 years of leadership in the agricultural sector. We cultivate 200,000+
-            hectares of land, supply the market with quality products and export to 10+ countries.
-            Our mission is to develop agriculture, introduce innovations and provide people with
-            natural products.
+            Agroton is <span className={styles.yellowText}>30 years</span> of leadership in the
+            agricultural sector. We cultivate{' '}
+            <span className={styles.yellowText}>200,000+ hectares of land</span>, supply the market
+            with quality products and export{' '}
+            <span className={styles.yellowText}>to 10+ countries</span>.{' '}
+            <span className={styles.boldText}>Our mission is</span> to develop agriculture,
+            introduce innovations and provide people with natural products.
           </h4>
 
           <ul className={styles.statsList}>
             <li className={styles.statsItem}>
-              <p>№1 in sunflower production in Ukraine</p>
-              <span>48,000 hectares of sown areas.</span>
+              <p className={styles.statsLabel}>
+                <span className={styles.yellowText}>№1</span> in sunflower production in Ukraine
+              </p>
+              <span className={styles.statsValue}>48,000 hectares of sown areas.</span>
             </li>
 
             <li className={styles.statsItem}>
-              <p>№4 in wheat production</p>
-              <span>50,000 hectares of fields.</span>
+              <p className={styles.statsLabel}>
+                <span className={styles.yellowText}>№4</span> in wheat production
+              </p>
+              <span className={styles.statsValue}>50,000 hectares of fields.</span>
             </li>
 
             <li className={styles.statsItem}>
-              <p>№1 in grain elevator capacity in Luhansk region</p>
-              <span>235,000 tons of storage.</span>
+              <p className={styles.statsLabel}>
+                <span className={styles.yellowText}>№1</span> in grain elevator capacity in Luhansk
+                region
+              </p>
+              <span className={styles.statsValue}>235,000 tons of storage.</span>
             </li>
 
             <li className={styles.statsItem}>
-              <p>№1 in poultry production in Luhansk region</p>
-              <span>4,000,000 chickens.</span>
+              <p className={styles.statsLabel}>
+                <span className={styles.yellowText}>№1</span> in poultry production in Luhansk
+                region
+              </p>
+              <span className={styles.statsValue}>4,000,000 chickens.</span>
             </li>
 
             <li className={styles.statsItem}>
-              <p>№5 in milk production in Ukraine</p>
-              <span>4,500 dairy cattle.</span>
+              <p className={styles.statsLabel}>
+                <span className={styles.yellowText}>№5</span> in milk production in Ukraine
+              </p>
+              <span className={styles.statsValue}>4,500 dairy cattle.</span>
             </li>
 
             <li className={styles.statsItem}>
-              <p>№2 in bakery production in Luhansk</p>
-              <span>7,000 tons of products per year.</span>
+              <p className={styles.statsLabel}>
+                <span className={styles.yellowText}>№2</span> in bakery production in Luhansk
+              </p>
+              <span className={styles.statsValue}>7,000 tons of products per year.</span>
             </li>
           </ul>
         </div>
