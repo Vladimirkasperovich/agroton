@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import achievement1 from '@/public/achievement-1.png';
 import arrowRight from '@/public/arrow-right.svg';
