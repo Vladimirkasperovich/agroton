@@ -1,0 +1,40 @@
+.switch {
+    position: relative;
+    width: 242px;
+    height: 60px;
+    background: #000;
+    border-radius: 96px;
+    padding: 3px;
+    font-family: var(--font-nunito-sans), sans-serif;
+}
+
+.switchLabel {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.375;
+    text-transform: uppercase;
+    position: absolute;
+    top: 19px;
+    left: 60px;
+    bottom: 19px;
+}
+
+.switchBtn {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: translateX(180px);
+}
+
+.on {
+    transform: translateX(0);
+}
+
+.switchBtn img {
+    margin: 0 auto;
+}

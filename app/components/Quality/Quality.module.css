@@ -1,0 +1,32 @@
+.quality {
+    margin-bottom: 115px;
+}
+
+.block {
+    background: var(--background-gray);
+    padding: 50px 0;
+}
+
+.qualityContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qualityTitle {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 40px;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 47px;
+}
+.switch{
+    margin-bottom: 50px;
+}
