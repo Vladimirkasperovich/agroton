@@ -12,11 +12,11 @@ interface QualityList {
   href: string;
 }
 
-export const QALITY__LIST: QualityList[] = [
+export const QUALITY__LIST: QualityList[] = [
   { id: 1, src: quality1, alt: 'Cereal crops', href: '#' },
-  { id: 1, src: quality2, alt: 'Oil seeds', href: '#' },
-  { id: 1, src: quality3, alt: 'Dairy products', href: '#' },
-  { id: 1, src: quality4, alt: 'Bakery products', href: '#' },
-  { id: 1, src: quality5, alt: 'Poultry farming', href: '#' },
-  { id: 1, src: quality6, alt: 'Vegetables and fruits', href: '#' },
+  { id: 2, src: quality2, alt: 'Oil seeds', href: '#' },
+  { id: 3, src: quality3, alt: 'Dairy products', href: '#' },
+  { id: 4, src: quality4, alt: 'Bakery products', href: '#' },
+  { id: 5, src: quality5, alt: 'Poultry farming', href: '#' },
+  { id: 6, src: quality6, alt: 'Vegetables and fruits', href: '#' },
 ];

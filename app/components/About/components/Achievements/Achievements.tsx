@@ -8,7 +8,7 @@ import styles from './Achievements.module.css';
 export const Achievements = () => {
   return (
     <div className={styles.achievements}>
-      <Link href="#" className={styles.achievement}>
+      <div className={styles.achievement}>
         <div className={styles.achievementImageBox}>
           <Image src={achievement1} alt="about achievements 1" />
           <button className={styles.achievementButton}>
@@ -27,9 +27,9 @@ export const Achievements = () => {
             production...
           </p>
         </div>
-      </Link>
+      </div>
 
-      <Link href="#" className={styles.achievement}>
+      <div className={styles.achievement}>
         <div className={styles.achievementImageBox}>
           <Image src={achievement2} alt="about achievements 2" />
           <button className={styles.achievementButton}>
@@ -47,7 +47,7 @@ export const Achievements = () => {
             in Ukraine...
           </p>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
