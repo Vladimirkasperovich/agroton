@@ -1,40 +1,36 @@
 .switch {
-    position: relative;
     width: 242px;
     height: 60px;
-    background: #000;
-    border-radius: 96px;
+    border-radius: 999px;
+    background: black;
     padding: 3px;
-    font-family: var(--font-nunito-sans), sans-serif;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
 }
 
-.switchLabel {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 1.375;
+.label {
+    flex: 1;
+    padding-left: 20px;
+    font-size: 14px;
     text-transform: uppercase;
-    position: absolute;
-    top: 19px;
-    left: 60px;
-    bottom: 19px;
+    color: white;
 }
 
-.switchBtn {
-    position: absolute;
+.thumb {
     width: 54px;
     height: 54px;
-    background: #fff;
     border-radius: 50%;
-    cursor: pointer;
+    background: white;
+
+    display: grid;
+    place-items: center;
+
     transition: transform 0.3s ease;
-    transform: translateX(180px);
 }
 
 .on {
-    transform: translateX(0);
-}
-
-.switchBtn img {
-    margin: 0 auto;
+    transform: translateX(-180px);
 }

@@ -3,15 +3,22 @@ import arrowRight from '@/public/arrow-right.svg';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from './Switch.module.css';
+
 export const Switch = () => {
-  const [isActive, setIsActive] = useState(false);
-  const toggle = () => setIsActive((prevState) => !prevState);
+  const [isOn, setIsOn] = useState(false);
+  const toggle = () => setIsOn((prevState) => !prevState);
   return (
-    <div className={styles.switch}>
-      <label className={styles.switchLabel}>See catalog</label>
-      <button className={`${styles.switchBtn} ${isActive ? styles.on : ''}`} onClick={toggle}>
+    <button
+      className={styles.switch}
+      onClick={toggle}
+      type="button"
+      role="switch"
+      aria-checked={isOn}
+    >
+      <span className={styles.label}>See catalog</span>
+      <span className={`${styles.thumb} ${isOn ? styles.on : ''}`}>
         <Image src={arrowRight} alt="arrow" width={10} height={10} />
-      </button>
-    </div>
+      </span>
+    </button>
   );
 };
