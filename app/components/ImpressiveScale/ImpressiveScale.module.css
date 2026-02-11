@@ -1,8 +1,7 @@
 .block {
-    text-align: center;
     padding-top: 115px;
     text-transform: uppercase;
-    position: relative;
+    text-align: center;
 }
 
 .subTitle {
@@ -13,21 +12,12 @@
 
 .title {
     font-weight: 600;
-    font-size: 280px;
+    font-size: 278px;
+    line-height: 1;
     color: var(--color-gold);
 }
 
-.bgBlock {
-    /*noinspection CssUnknownTarget*/
-    background-image: url("/impressive-scale-bg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 405px;
+.image {
+    margin-top: -145px;
     width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -39%;
-
 }
