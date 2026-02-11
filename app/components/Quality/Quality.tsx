@@ -14,7 +14,7 @@ export const Quality = () => {
               <h2 className={styles.title}>High quality agricultural products</h2>
               <ul className={styles.grid}>
                 {QUALITY__LIST.map(({ id, src, alt, href }) => (
-                  <li key={id}>
+                  <li key={id} className={styles.item}>
                     <Link href={href}>
                       <Image src={src} alt={alt} />
                     </Link>
